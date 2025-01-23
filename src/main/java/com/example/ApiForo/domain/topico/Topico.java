@@ -45,12 +45,43 @@ public class Topico {
     private List<Respuesta> respuestas;
 
 
-    public Topico(DatosRegistroTopico datosRegistroTopico,Usuario autor, Curso curso){
+    public Topico() {
+    }
+
+    public Topico(DatosRegistroTopico datosRegistroTopico, Usuario autor, Curso curso){
         this.activo = true;
         this.fechaCreacion = LocalDateTime.now(); // Asigna la fecha de creación actual
         this.titulo = datosRegistroTopico.titulo();
         this.mensaje = datosRegistroTopico.mensaje();
         this.autor = autor;
         this.curso = curso;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public Boolean getActivo() {
+        return activo;
+    }
+
+    public Usuario getAutor() {
+        return autor;
+    }
+
+    public Curso getCurso() {
+        return curso;
     }
 }
